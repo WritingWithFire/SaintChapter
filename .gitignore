@@ -16,6 +16,11 @@ out
 # gradle
 build
 .gradle
+# 为了更好的支持不同版本的gradle，把关于本版本的gradle相关文件屏蔽了。
+/gradle
+gradle.properties
+gradlew
+gradlew.bat
 
 # other
 eclipse
