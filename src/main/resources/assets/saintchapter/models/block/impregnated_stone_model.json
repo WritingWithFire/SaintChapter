@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "saintchapter:block/impregnated_stone_texture"
+  }
+}
