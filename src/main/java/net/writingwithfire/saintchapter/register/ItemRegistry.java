@@ -9,5 +9,5 @@ import net.writingwithfire.saintchapter.item.ItemRevelationScroll;
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "saintchapter");
 
-    public static final RegistryObject REVELATION_SCROLL = ITEMS.register("revelation_scroll", ItemRevelationScroll::new);
+    public static final RegistryObject<ItemRevelationScroll> REVELATION_SCROLL = ITEMS.register("revelation_scroll", ItemRevelationScroll::new);
 }
