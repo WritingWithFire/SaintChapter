@@ -1,8 +1,7 @@
-package net.writingwithfire.saintchapter.item;
+package net.writingwithfire.saintchapter.common.item;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.writingwithfire.saintchapter.tab.TabLib;
+import net.writingwithfire.saintchapter.common.tab.TabLib;
 
 public class ItemRevelationScroll extends Item {
     public ItemRevelationScroll() {

@@ -1,4 +1,4 @@
-package net.writingwithfire.saintchapter.tab;
+package net.writingwithfire.saintchapter.common.tab;
 
 import net.minecraft.item.ItemGroup;
 

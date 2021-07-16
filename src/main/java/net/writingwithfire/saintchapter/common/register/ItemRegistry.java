@@ -1,12 +1,12 @@
-package net.writingwithfire.saintchapter.register;
+package net.writingwithfire.saintchapter.common.register;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.writingwithfire.saintchapter.item.ItemRevelationScroll;
-import net.writingwithfire.saintchapter.tab.TabLib;
+import net.writingwithfire.saintchapter.common.item.ItemRevelationScroll;
+import net.writingwithfire.saintchapter.common.tab.TabLib;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "saintchapter");

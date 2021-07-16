@@ -1,8 +1,8 @@
-package net.writingwithfire.saintchapter.tab;
+package net.writingwithfire.saintchapter.common.tab;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.writingwithfire.saintchapter.register.ItemRegistry;
+import net.writingwithfire.saintchapter.common.register.ItemRegistry;
 
 public class TabBase extends ItemGroup {
     public TabBase() {

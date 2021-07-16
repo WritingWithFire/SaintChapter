@@ -13,8 +13,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.writingwithfire.saintchapter.register.BlockRegistry;
-import net.writingwithfire.saintchapter.register.ItemRegistry;
+import net.writingwithfire.saintchapter.common.register.BlockRegistry;
+import net.writingwithfire.saintchapter.common.register.ItemRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
