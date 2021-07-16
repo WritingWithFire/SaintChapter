@@ -42,6 +42,10 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
+            // 解除帕秋莉调用崩溃
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             // Recommended logging data for a userdev environment
             // The markers can be changed as needed.
             // "SCAN": For mods scan.
@@ -131,8 +135,8 @@ dependencies {
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-    compileOnly fg.deobf('vazkii.patchouli:Patchouli:1.16.4-48:api')
-    runtimeOnly fg.deobf('vazkii.patchouli:Patchouli:1.16.4-48')
+    compileOnly fg.deobf('vazkii.patchouli:Patchouli:1.16.4-53.1:api')
+    runtimeOnly fg.deobf('vazkii.patchouli:Patchouli:1.16.4-53.1')
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
     // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
