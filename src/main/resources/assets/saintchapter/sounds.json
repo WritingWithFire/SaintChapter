@@ -1,0 +1,11 @@
+{
+  "heart_beat": {
+    "replace": "true",
+    "sounds": [
+      {
+        "name": "saintchapter:ore/heart_beat",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -11,7 +11,10 @@ import net.writingwithfire.saintchapter.common.tab.TabLib;
 public class ItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "saintchapter");
 
-    public static final RegistryObject<ItemRevelationScroll> REVELATION_SCROLL = ITEMS.register("revelation_scroll", ItemRevelationScroll::new);
+    // 注册普通物品
+    public static final RegistryObject<Item> REVELATION_SCROLL = ITEMS.register("revelation_scroll", ItemRevelationScroll::new);
 
-    public static final RegistryObject<BlockItem> IMPREGNATED_STONE_ITEM = ITEMS.register("impregnated_stone_item", () -> new BlockItem(BlockRegistry.IMPREGNATED_STONE.get(), new Item.Properties().tab(TabLib.BASE_TAB)));
+    // 注册方块物品
+    public static final RegistryObject<Item> IMPREGNATED_STONE = ITEMS.register("impregnated_stone", () -> new BlockItem(BlockRegistry.IMPREGNATED_STONE.get(), new Item.Properties().group(TabLib.BASE_TAB)));
+    public static final RegistryObject<Item> MIND_STONE = ITEMS.register("mind_stone", () -> new BlockItem(BlockRegistry.MIND_STONE.get(), new Item.Properties().group(TabLib.BASE_TAB)));
 }

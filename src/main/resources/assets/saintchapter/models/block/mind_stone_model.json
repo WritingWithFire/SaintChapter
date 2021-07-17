@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "saintchapter:block/mind_stone_texture"
+  }
+}

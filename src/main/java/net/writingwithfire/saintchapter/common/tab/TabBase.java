@@ -10,7 +10,7 @@ public class TabBase extends ItemGroup {
     }
 
     @Override
-    public ItemStack makeIcon() {
+    public ItemStack createIcon() {
         return new ItemStack(ItemRegistry.REVELATION_SCROLL.get());
     }
 }

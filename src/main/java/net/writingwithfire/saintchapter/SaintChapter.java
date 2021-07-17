@@ -15,6 +15,8 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.writingwithfire.saintchapter.common.register.BlockRegistry;
 import net.writingwithfire.saintchapter.common.register.ItemRegistry;
+import net.writingwithfire.saintchapter.common.register.SoundEventRegistry;
+import net.writingwithfire.saintchapter.common.register.TileEntityTypeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,21 +41,19 @@ public class SaintChapter
         // 注册
         ItemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockRegistry.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        SoundEventRegistry.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        TileEntityTypeRegistry.TILE_ENTITYS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

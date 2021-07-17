@@ -5,6 +5,6 @@ import net.minecraft.block.material.Material;
 
 public class BlockImpregnatedStone extends Block {
     public BlockImpregnatedStone() {
-        super(Properties.of(Material.STONE).strength(5));
+        super(Properties.create(Material.ROCK).hardnessAndResistance(5));
     }
 }

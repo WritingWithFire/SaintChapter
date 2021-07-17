@@ -5,6 +5,6 @@ import net.writingwithfire.saintchapter.common.tab.TabLib;
 
 public class ItemRevelationScroll extends Item {
     public ItemRevelationScroll() {
-        super(new Properties().tab(TabLib.BASE_TAB));
+        super(new Properties().group(TabLib.BASE_TAB));
     }
 }
