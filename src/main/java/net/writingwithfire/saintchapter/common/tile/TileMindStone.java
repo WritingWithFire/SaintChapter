@@ -18,13 +18,13 @@ public class TileMindStone extends TileEntity implements ITickableTileEntity {
 
     @Override
     public void tick() {
-        if (world != null && !world.isRemote) {
+        if (world != null && world.isRemote) {
             if (timer == MAX_TIME) {
                 PlayerEntity playerEntity = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
                 // debug
-                TranslationTextComponent translationTextComponent = new TranslationTextComponent("message.hello_block.hello");
+//                TranslationTextComponent translationTextComponent = new TranslationTextComponent("message.hello_block.hello");
                 if (playerEntity != null) {
-                    playerEntity.sendStatusMessage(translationTextComponent, false);
+//                    playerEntity.sendStatusMessage(translationTextComponent, false);
                     world.playSound(playerEntity, pos, SoundEventRegistry.HEART_BEAT.get(), SoundCategory.BLOCKS, 10f, 1f);
                 }
                 timer = 0;
