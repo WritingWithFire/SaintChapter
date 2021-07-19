@@ -1,5 +1,7 @@
 {
-  "name": "BOOK NAME",
-  "landing_text": "LANDING TEXT",
-  "version": 1
+  "name": "patchouli_books.book_of_truth.name",
+  "landing_text": "patchouli_books.book_of_truth.landing_text",
+  "version": "0",
+  "creative_tab": "base_tab",
+  "subtitle": "patchouli_books.book_of_truth.subtitle"
 }

@@ -1,4 +1,12 @@
 {
   "item.saintchapter.revelation_scroll": "启示卷轴",
-  "itemGroup.base_tab": "圣章"
+
+  "block.saintchapter.mind_stone": "心石",
+  "block.saintchapter.impregnated_stone": "浸渍石块",
+
+  "itemGroup.base_tab": "圣章",
+
+  "patchouli_books.book_of_truth.name": "真理之书",
+  "patchouli_books.book_of_truth.landing_text": "当你发现这本书时，我们的世界或许不存在了。",
+  "patchouli_books.book_of_truth.subtitle": "我一直在寻找"
 }
