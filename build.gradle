@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-//version = '0.1.0' // 转移到gradle.properties里面了
+version = '1.16.5-0.1.0'
 group = 'net.writingwithfire.saintchapter' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'saintchapter'
 
@@ -75,7 +75,6 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'saintchapter', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
@@ -93,28 +92,29 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 // 相关依赖的maven库
 repositories {
     maven {
-        // Patchouli的maven库
+        // Patchouli使用
         name = "Blamejared"
         url = "https://maven.blamejared.com"
     }
     maven {
-        // location of the maven that hosts JEI files
+        // JEI使用
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
+        // ObserverLib使用
         name 'Hellfirepvp maven'
         url 'https://maven.hellfiredev.net/'
     }
-    maven {
-        // location of a maven mirror for JEI files, as a fallback
-        name = "ModMaven"
-        url = "https://modmaven.k-4u.nl"
-    }
-    maven {
-        name 'Theillusivec4'
-        url "https://maven.theillusivec4.top/"
-    }
+//    maven {
+//        // location of a maven mirror for JEI files, as a fallback
+//        name = "ModMaven"
+//        url = "https://modmaven.k-4u.nl"
+//    }
+//    maven {
+//        name 'Theillusivec4'
+//        url "https://maven.theillusivec4.top/"
+//    }
 }
 
 dependencies {

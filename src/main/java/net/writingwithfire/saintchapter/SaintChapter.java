@@ -1,88 +1,42 @@
 package net.writingwithfire.saintchapter;
 
-import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.*;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.writingwithfire.saintchapter.common.register.BlockRegistry;
-import net.writingwithfire.saintchapter.common.register.ItemRegistry;
-import net.writingwithfire.saintchapter.common.register.SoundEventRegistry;
-import net.writingwithfire.saintchapter.common.register.TileEntityTypeRegistry;
+import net.writingwithfire.saintchapter.client.ClientProxy;
+import net.writingwithfire.saintchapter.common.CommonProxy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.stream.Collectors;
-
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod("saintchapter")
-public class SaintChapter
-{
-    // Directly reference a log4j logger.
+public class SaintChapter {
+
+    public static final String MODID = "saintchapter";
+    public static final String NAME = "Saint Chapter";
+
+    private static SaintChapter instance;
+    private static ModContainer modContainer;
+    private static CommonProxy proxy;
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     public SaintChapter() {
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
-        // 注册
-        ItemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        BlockRegistry.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        SoundEventRegistry.SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        TileEntityTypeRegistry.TILE_ENTITYS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        instance = this;
+        modContainer = ModList.get().getModContainerById(MODID).get();
 
-        MinecraftForge.EVENT_BUS.register(this);
+        this.proxy = DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+        this.proxy.initialize();
+        this.proxy.attachLifecycle(FMLJavaModLoadingContext.get().getModEventBus());
+        this.proxy.attachEventHandlers(MinecraftForge.EVENT_BUS);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
+    public static ResourceLocation key(String path) {
+        return new ResourceLocation(SaintChapter.MODID, path);
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
-        // do something that can only be done on the client
-    }
-
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
-        // some example code to dispatch IMC to another mod
-        InterModComms.sendTo("saintchapter", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
-    }
-
-    private void processIMC(final InterModProcessEvent event)
-    {
-        // some example code to receive and process InterModComms from other mods
-        LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m->m.getMessageSupplier().get()).
-                collect(Collectors.toList()));
-    }
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) {
-        // do something when the server starts
-        LOGGER.info("HELLO from server starting");
-    }
-
-    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-    // Event bus for receiving Registry Events)
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
-            LOGGER.info("HELLO from Register Block");
-        }
+    public static boolean isDoingDataGeneration() {
+        return DatagenModLoader.isRunningDataGen();
     }
 }
