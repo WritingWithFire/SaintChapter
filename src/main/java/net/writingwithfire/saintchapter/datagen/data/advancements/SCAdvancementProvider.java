@@ -13,7 +13,7 @@ import net.minecraft.data.IDataProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.writingwithfire.saintchapter.SaintChapter;
-import net.writingwithfire.saintchapter.common.register.ItemRegistry;
+import net.writingwithfire.saintchapter.common.registry.deferred.RegistryItems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -55,10 +55,10 @@ public class SCAdvancementProvider extends AdvancementProvider {
 
     private void registerAdvancements(Consumer<Advancement> registrar) {
         Advancement.Builder.builder()
-                .withDisplay(ItemRegistry.MIND_STONE.get().getItem(), title("hear_me_heartbeat"), description("hear_me_heartbeat"),
+                .withDisplay(RegistryItems.MIND_STONE.get().getItem(), title("hear_me_heartbeat"), description("hear_me_heartbeat"),
                         SaintChapter.key("textures/block/mind_stone_texture.png"),
                         FrameType.TASK, false, false, false)
-                .withCriterion("hear_the_heartbeat", InventoryChangeTrigger.Instance.forItems(ItemRegistry.MIND_STONE.get().getItem()))
+                .withCriterion("hear_the_heartbeat", InventoryChangeTrigger.Instance.forItems(RegistryItems.MIND_STONE.get().getItem()))
                 .register(registrar, SaintChapter.key("hear_me_heartbeat").toString());
     }
 

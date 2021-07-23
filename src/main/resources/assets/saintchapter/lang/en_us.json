@@ -1,13 +1,14 @@
 {
   "item.saintchapter.revelation_scroll": "启示卷轴",
+  "item.saintchapter.mind_crystal": "远古意志结晶",
 
   "block.saintchapter.mind_stone": "心石",
   "block.saintchapter.impregnated_stone": "浸渍石块",
 
-  "itemGroup.base_tab": "圣章",
+  "itemGroup.saintchapter": "圣章",
 
   "patchouli_books.book_of_truth.name": "真理之书",
-  "patchouli_books.book_of_truth.landing_text": "当你发现这本书时，我们的世界或许不存在了。",
+  "patchouli_books.book_of_truth.landing_text": "当你发现我时，我所存在的世界已经不存在了，而我作为一本书，在那场灾难中用尽了魔力，苟延残喘",
   "patchouli_books.book_of_truth.subtitle": "我一直在寻找",
 
   "advancement.saintchapter.hear_me_heartbeat.title": "聆听我的心跳",

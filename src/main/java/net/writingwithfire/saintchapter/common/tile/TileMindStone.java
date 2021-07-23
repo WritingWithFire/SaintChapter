@@ -4,16 +4,15 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.writingwithfire.saintchapter.common.register.SoundEventRegistry;
-import net.writingwithfire.saintchapter.common.register.TileEntityTypeRegistry;
+import net.writingwithfire.saintchapter.common.registry.deferred.RegistrySounds;
+import net.writingwithfire.saintchapter.common.registry.deferred.RegistryTileEntities;
 
 public class TileMindStone extends TileEntity implements ITickableTileEntity {
     private static final int MAX_TIME = 6 * 20;
     private int timer = 0;
 
     public TileMindStone(){
-        super(TileEntityTypeRegistry.MIND_STONE.get());
+        super(RegistryTileEntities.MIND_STONE.get());
     }
 
     @Override
@@ -25,7 +24,7 @@ public class TileMindStone extends TileEntity implements ITickableTileEntity {
 //                TranslationTextComponent translationTextComponent = new TranslationTextComponent("message.hello_block.hello");
                 if (playerEntity != null) {
 //                    playerEntity.sendStatusMessage(translationTextComponent, false);
-                    world.playSound(playerEntity, pos, SoundEventRegistry.HEART_BEAT.get(), SoundCategory.BLOCKS, 10f, 1f);
+                    world.playSound(playerEntity, pos, RegistrySounds.HEART_BEAT.get(), SoundCategory.BLOCKS, 10f, 1f);
                 }
                 timer = 0;
             }
