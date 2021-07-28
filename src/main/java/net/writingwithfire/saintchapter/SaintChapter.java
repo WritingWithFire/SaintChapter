@@ -18,7 +18,7 @@ public class SaintChapter {
 
     private static SaintChapter instance;
     private static ModContainer modContainer;
-    private static CommonProxy proxy;
+    private final CommonProxy proxy;
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -30,6 +30,18 @@ public class SaintChapter {
         this.proxy.initialize();
         this.proxy.attachLifecycle(FMLJavaModLoadingContext.get().getModEventBus());
         this.proxy.attachEventHandlers(MinecraftForge.EVENT_BUS);
+    }
+
+    public static SaintChapter getInstance() {
+        return instance;
+    }
+
+    public static ModContainer getModContainer() {
+        return modContainer;
+    }
+
+    public static CommonProxy getProxy() {
+        return getInstance().proxy;
     }
 
     public static ResourceLocation key(String path) {
