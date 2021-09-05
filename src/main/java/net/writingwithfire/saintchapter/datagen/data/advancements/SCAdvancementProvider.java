@@ -13,7 +13,7 @@ import net.minecraft.data.IDataProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.writingwithfire.saintchapter.SaintChapter;
-import net.writingwithfire.saintchapter.common.registry.deferred.RegistryItems;
+import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryItems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

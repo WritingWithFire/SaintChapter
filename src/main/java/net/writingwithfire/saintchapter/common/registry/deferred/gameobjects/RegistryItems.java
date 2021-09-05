@@ -1,4 +1,4 @@
-package net.writingwithfire.saintchapter.common.registry.deferred;
+package net.writingwithfire.saintchapter.common.registry.deferred.gameobjects;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

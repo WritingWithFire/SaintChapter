@@ -1,12 +1,8 @@
 package net.writingwithfire.saintchapter.common.registry.internal;
 
 import com.google.common.collect.Lists;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
-import net.writingwithfire.saintchapter.common.util.MiscUtils;
 
-import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;

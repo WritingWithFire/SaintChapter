@@ -1,4 +1,4 @@
-package net.writingwithfire.saintchapter.common.registry.deferred;
+package net.writingwithfire.saintchapter.common.registry.deferred.gameobjects;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
