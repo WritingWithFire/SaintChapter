@@ -6,6 +6,7 @@ import net.writingwithfire.saintchapter.common.data.config.ServerConfig;
 import net.writingwithfire.saintchapter.common.data.config.entry.WorldGenConfig;
 import net.writingwithfire.saintchapter.common.registry.internal.InternalRegistryPrimer;
 import net.writingwithfire.saintchapter.common.registry.internal.PrimerEventHandler;
+import net.writingwithfire.saintchapter.common.registry.internal.RegistryRegistries;
 import net.writingwithfire.saintchapter.common.world.WorldGenHandlers;
 
 public class CommonProxy {
@@ -30,6 +31,8 @@ public class CommonProxy {
     }
 
     public void attachLifecycle(IEventBus modEventBus) {
+        modEventBus.addListener(RegistryRegistries::buildRegistries);
+
         registryEventHandler.attachEventHandlers(modEventBus);
     }
 

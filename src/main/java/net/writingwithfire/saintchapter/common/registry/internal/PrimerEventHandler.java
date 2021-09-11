@@ -1,6 +1,7 @@
 package net.writingwithfire.saintchapter.common.registry.internal;
 
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.writingwithfire.saintchapter.common.registry.deferred.custom.RegistryChapters;
 import net.writingwithfire.saintchapter.common.registry.deferred.custom.forge.RegistryDataSerializers;
 import net.writingwithfire.saintchapter.common.registry.deferred.custom.forge.RegistryLootModifierSerializers;
 import net.writingwithfire.saintchapter.common.registry.deferred.custom.forge.RegistryWorldTypes;
@@ -56,6 +57,7 @@ public class PrimerEventHandler {
         RegistryLootModifierSerializers.LOOT_MODIFIER_SERIALIZERS.register(eventBus);
         RegistryWorldTypes.WORLD_TYPES.register(eventBus);
 
+        RegistryChapters.CHAPTERS.register(eventBus);
 
         // 利用星辉魔法提供的注册方式注册
     }
