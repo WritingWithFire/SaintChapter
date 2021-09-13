@@ -1,6 +1,9 @@
 package net.writingwithfire.saintchapter.common;
 
+import hellfirepvp.observerlib.common.util.tick.ITickHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.writingwithfire.saintchapter.common.capability.CapabilityAttachHandler;
+import net.writingwithfire.saintchapter.common.capability.CapabilityRegisterHandler;
 import net.writingwithfire.saintchapter.common.data.config.CommonConfig;
 import net.writingwithfire.saintchapter.common.data.config.ServerConfig;
 import net.writingwithfire.saintchapter.common.data.config.entry.WorldGenConfig;
@@ -8,6 +11,8 @@ import net.writingwithfire.saintchapter.common.registry.internal.InternalRegistr
 import net.writingwithfire.saintchapter.common.registry.internal.PrimerEventHandler;
 import net.writingwithfire.saintchapter.common.registry.internal.RegistryRegistries;
 import net.writingwithfire.saintchapter.common.world.WorldGenHandlers;
+
+import java.util.function.Consumer;
 
 public class CommonProxy {
 
@@ -31,12 +36,14 @@ public class CommonProxy {
     }
 
     public void attachLifecycle(IEventBus modEventBus) {
+        modEventBus.addListener(CapabilityRegisterHandler::capabilityRegisterHandler);
         modEventBus.addListener(RegistryRegistries::buildRegistries);
 
         registryEventHandler.attachEventHandlers(modEventBus);
     }
 
     public void attachEventHandlers(IEventBus eventBus) {
+        eventBus.addListener(CapabilityAttachHandler::capabilityAttachHandler);
         eventBus.addListener(WorldGenHandlers::generateOres);
     }
 
@@ -46,5 +53,9 @@ public class CommonProxy {
 
     protected void initializeConfigurations() {
         this.commonConfig.addConfigEntry(WorldGenConfig.CONFIG);
+    }
+
+    public void attachTickListeners(Consumer<ITickHandler> registrar) {
+
     }
 }
