@@ -22,7 +22,7 @@ import java.nio.file.Path;
 import java.util.Set;
 import java.util.function.Consumer;
 
-public class SCAdvancementProvider extends AdvancementProvider {
+public class SCAdvancementProvider extends net.minecraft.data.AdvancementProvider {
 
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().create();
