@@ -1,4 +1,4 @@
-package net.writingwithfire.saintchapter.common.capability.provider;
+package net.writingwithfire.saintchapter.common.capability;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;

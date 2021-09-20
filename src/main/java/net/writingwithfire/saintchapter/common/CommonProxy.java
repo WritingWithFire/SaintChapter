@@ -1,7 +1,9 @@
 package net.writingwithfire.saintchapter.common;
 
 import hellfirepvp.observerlib.common.util.tick.ITickHandler;
+import net.minecraft.entity.Entity;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.writingwithfire.saintchapter.common.capability.CapabilityAttachHandler;
 import net.writingwithfire.saintchapter.common.capability.CapabilityRegisterHandler;
 import net.writingwithfire.saintchapter.common.data.config.CommonConfig;
@@ -36,15 +38,16 @@ public class CommonProxy {
     }
 
     public void attachLifecycle(IEventBus modEventBus) {
-        modEventBus.addListener(CapabilityRegisterHandler::capabilityRegisterHandler);
+        modEventBus.addListener(this::onCommonSetup);
+
         modEventBus.addListener(RegistryRegistries::buildRegistries);
 
         registryEventHandler.attachEventHandlers(modEventBus);
     }
 
     public void attachEventHandlers(IEventBus eventBus) {
-        eventBus.addListener(CapabilityAttachHandler::capabilityAttachHandler);
         eventBus.addListener(WorldGenHandlers::generateOres);
+        eventBus.addGenericListener(Entity.class, CapabilityAttachHandler::capabilityAttachHandler);
     }
 
     public InternalRegistryPrimer getRegistryPrimer() {
@@ -57,5 +60,10 @@ public class CommonProxy {
 
     public void attachTickListeners(Consumer<ITickHandler> registrar) {
 
+    }
+
+    // Mod Event
+    private void onCommonSetup(FMLCommonSetupEvent event) {
+        CapabilityRegisterHandler.capabilityRegisterHandler(event);
     }
 }
