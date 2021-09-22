@@ -10,6 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'java'
 
 version = '1.16.5-0.1.0'
 group = 'net.writingwithfire.saintchapter' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -130,6 +131,11 @@ dependencies {
 
     compileOnly fg.deobf('com.blamejared.crafttweaker:CraftTweaker-1.16.5:7.1.0.294')
     runtimeOnly fg.deobf('com.blamejared.crafttweaker:CraftTweaker-1.16.5:7.1.0.294')
+}
+
+// 使用UTF-8编译，但是，感觉没什么用。
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
 
 jar {

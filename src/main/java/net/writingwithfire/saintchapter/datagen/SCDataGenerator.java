@@ -33,7 +33,7 @@ public class SCDataGenerator {
         if (event.includeServer()) {
             gen.addProvider(new SCAdvancementProvider(gen));
             gen.addProvider(new SCGlobalLootModifierProvider(gen, SaintChapter.MODID));
-            gen.addProvider(new SCLootTableProvider(gen));
+//            gen.addProvider(new SCLootTableProvider(gen));
             gen.addProvider(new SCRecipeProvider(gen));
             BlockTagsProvider blockTagsProvider = new SCBlockTagsProvider(gen, fileHelper);
             gen.addProvider(blockTagsProvider);
