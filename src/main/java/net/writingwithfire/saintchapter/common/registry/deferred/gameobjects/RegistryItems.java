@@ -28,6 +28,7 @@ public class RegistryItems {
     public static final RegistryObject<BlockItem> IMPREGNATED_STONE = registryAndPut("impregnated_stone", () -> new BlockItem(RegistryBlocks.IMPREGNATED_STONE.get(), new Item.Properties().group(TabLib.ITEM_GROUP_SC)));
     public static final RegistryObject<BlockItem> MIND_STONE = registryAndPut("mind_stone", () -> new BlockItem(RegistryBlocks.MIND_STONE.get(), new Item.Properties().group(TabLib.ITEM_GROUP_SC)));
     public static final RegistryObject<BlockItem> DEBUG_AND_TEST = registryAndPut("debug_and_test", () -> new BlockItem(RegistryBlocks.DEBUG_AND_TEST.get(), new Item.Properties().group(TabLib.ITEM_GROUP_SC)));
+    public static final RegistryObject<BlockItem> DREAM_FIRE = registryAndPut("dream_fire", () -> new BlockItem(RegistryBlocks.DREAM_FIRE.get(), new Item.Properties().group(TabLib.ITEM_GROUP_SC)));
 
     private static RegistryObject<Item> registerAndPut(String name, Supplier<Item> supplier) {
         RegistryObject<Item> registryObject = ITEMS.register(name, supplier);
