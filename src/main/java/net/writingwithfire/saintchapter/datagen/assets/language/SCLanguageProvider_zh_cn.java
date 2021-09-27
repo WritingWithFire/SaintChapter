@@ -1,8 +1,12 @@
 package net.writingwithfire.saintchapter.datagen.assets.language;
 
 import net.minecraft.data.DataGenerator;
+import net.writingwithfire.saintchapter.common.item.ItemRevelationScroll;
+import net.writingwithfire.saintchapter.common.lib.NameLib;
+import net.writingwithfire.saintchapter.common.lib.TranslationTextLib;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryBlocks;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryItems;
+import net.writingwithfire.saintchapter.common.util.NameUtil;
 
 public class SCLanguageProvider_zh_cn extends net.minecraftforge.common.data.LanguageProvider {
     public SCLanguageProvider_zh_cn(DataGenerator gen, String modid, String locale) {
@@ -36,5 +40,9 @@ public class SCLanguageProvider_zh_cn extends net.minecraftforge.common.data.Lan
         String advancementPrefix = "advancement.saintchapter.";
         add(advancementPrefix + "hear_me_heartbeat.title", "聆听我的心跳");
         add(advancementPrefix + "hear_me_heartbeat.description", "通过心跳声找到并获取心石");
+
+        // 物品注释
+        add(TranslationTextLib.TOOL_TIP + NameLib.ItemName.REVELATION_SCROLL, "你疏浅的学识无以通晓其真谛");
+        add(TranslationTextLib.TOOL_TIP + NameLib.ItemName.MIND_CRYSTAL, "你依稀听得见其中的呼唤");
     }
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "min": 3.0,
+        "max": 5.0,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "saintchapter:revelation_scroll"
+        }
+      ],
+      "bonus_rolls": {
+        "min": 1.0,
+        "max": 2.0
+      }
+    }
+  ]
+}
