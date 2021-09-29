@@ -1,7 +1,7 @@
 package net.writingwithfire.saintchapter.common.lib;
 
-public class WorldGenerationLib {
-    private WorldGenerationLib() {}
+public class LibWorldGeneration {
+    private LibWorldGeneration() {}
 
     public static class Structure {
 

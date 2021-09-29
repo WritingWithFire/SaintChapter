@@ -27,6 +27,7 @@ public class PrimerEventHandler {
         RegistryEntities.ENTITIES.register(eventBus);
         RegistryFluids.FLUIDS.register(eventBus);
         RegistryItems.ITEMS.register(eventBus);
+        RegistryItems.RegistryBlockItems.BLOCK_ITEMS.register(eventBus);
         RegistryPaintingTypes.PAINTING_TYPES.register(eventBus);
         RegistryPotions.POTIONS.register(eventBus);
         RegistryPotionTypes.POTION_TYPES.register(eventBus);

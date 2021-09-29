@@ -6,9 +6,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
-import net.writingwithfire.saintchapter.common.capability.IMindCapability;
-import net.writingwithfire.saintchapter.common.capability.MindCapability;
-import net.writingwithfire.saintchapter.common.lib.CapabilitiesLib;
+import net.writingwithfire.saintchapter.common.lib.LibCapabilities;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -19,7 +17,7 @@ public class MindCapabilityProvider implements ICapabilityProvider, INBTSerializ
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        return cap == CapabilitiesLib.MIND_CAPABILITY ? LazyOptional.of(this::getOrCreateCapability).cast() : LazyOptional.empty();
+        return cap == LibCapabilities.MIND_CAPABILITY ? LazyOptional.of(this::getOrCreateCapability).cast() : LazyOptional.empty();
     }
 
     @Nonnull

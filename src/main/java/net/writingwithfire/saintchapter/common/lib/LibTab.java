@@ -7,7 +7,7 @@ import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.Reg
 
 import javax.annotation.Nonnull;
 
-public class TabLib {
+public class LibTab {
     public static final ItemGroup ITEM_GROUP_SC = new ItemGroup(SaintChapter.MODID) {
         @Nonnull
         @Override

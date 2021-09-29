@@ -1,4 +1,4 @@
 package net.writingwithfire.saintchapter.common.lib;
 
-public class RarityLib {
+public class LibDamageSource {
 }

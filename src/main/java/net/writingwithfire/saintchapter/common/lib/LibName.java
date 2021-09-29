@@ -10,8 +10,8 @@ import net.writingwithfire.saintchapter.common.item.ItemMindCrystal;
 import net.writingwithfire.saintchapter.common.item.ItemRevelationScroll;
 import net.writingwithfire.saintchapter.common.util.NameUtil;
 
-public class NameLib {
-    private NameLib() {}
+public class LibName {
+    private LibName() {}
 
     public static class ItemName {
         public static final String REVELATION_SCROLL = NameUtil.getDefaultName(ItemRevelationScroll.class);

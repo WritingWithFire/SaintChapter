@@ -4,9 +4,9 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.writingwithfire.saintchapter.common.capability.IMindCapability;
 
-public class CapabilitiesLib {
+public class LibCapabilities {
 
-    private CapabilitiesLib() {}
+    private LibCapabilities() {}
 
     @CapabilityInject(IMindCapability.class)
     public static Capability<IMindCapability> MIND_CAPABILITY;

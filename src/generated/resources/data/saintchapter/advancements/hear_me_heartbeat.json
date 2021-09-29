@@ -13,7 +13,7 @@
     "show_toast": false,
     "announce_to_chat": false,
     "hidden": false,
-    "background": "saintchapter:textures/block/mind_stone_texture.png"
+    "background": "saintchapter:textures/block/mind_stone.png"
   },
   "criteria": {
     "hear_the_heartbeat": {

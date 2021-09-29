@@ -5,9 +5,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.writingwithfire.saintchapter.SaintChapter;
 import net.writingwithfire.saintchapter.common.chapter.base.BaseChapter;
 
-public class RegistriesLib {
+public class LibRegistries {
 
-    private RegistriesLib() {}
+    private LibRegistries() {}
 
     public static final ResourceLocation REGISTRY_NAME_CHAPTERS = SaintChapter.key("chapter");
 

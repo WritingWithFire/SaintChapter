@@ -4,7 +4,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.RegistryBuilder;
 import net.writingwithfire.saintchapter.common.chapter.base.BaseChapter;
 
-import static net.writingwithfire.saintchapter.common.lib.RegistriesLib.*;
+import static net.writingwithfire.saintchapter.common.lib.LibRegistries.*;
 
 
 public class RegistryRegistries {

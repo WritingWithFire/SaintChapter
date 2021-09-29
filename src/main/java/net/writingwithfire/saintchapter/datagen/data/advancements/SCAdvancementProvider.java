@@ -55,10 +55,10 @@ public class SCAdvancementProvider extends net.minecraft.data.AdvancementProvide
 
     private void registerAdvancements(Consumer<Advancement> registrar) {
         Advancement.Builder.builder()
-                .withDisplay(RegistryItems.MIND_STONE.get().getItem(), title("hear_me_heartbeat"), description("hear_me_heartbeat"),
-                        SaintChapter.key("textures/block/mind_stone_texture.png"),
+                .withDisplay(RegistryItems.RegistryBlockItems.MIND_STONE.get().getItem(), title("hear_me_heartbeat"), description("hear_me_heartbeat"),
+                        SaintChapter.key("textures/block/mind_stone.png"),
                         FrameType.TASK, false, false, false)
-                .withCriterion("hear_the_heartbeat", InventoryChangeTrigger.Instance.forItems(RegistryItems.MIND_STONE.get().getItem()))
+                .withCriterion("hear_the_heartbeat", InventoryChangeTrigger.Instance.forItems(RegistryItems.RegistryBlockItems.MIND_STONE.get().getItem()))
                 .register(registrar, SaintChapter.key("hear_me_heartbeat").toString());
     }
 
