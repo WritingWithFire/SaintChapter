@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.writingwithfire.saintchapter.SaintChapter;
 import net.writingwithfire.saintchapter.common.item.ItemDebugAndTestStick;
+import net.writingwithfire.saintchapter.common.item.ItemMindCrystal;
 import net.writingwithfire.saintchapter.common.item.ItemRevelationScroll;
 import net.writingwithfire.saintchapter.common.lib.LibName;
 import net.writingwithfire.saintchapter.common.lib.LibTab;
@@ -21,7 +22,7 @@ public class RegistryItems {
 
     // 注册普通物品
     public static final RegistryObject<Item> REVELATION_SCROLL = registerAndPut(LibName.ItemName.REVELATION_SCROLL, ItemRevelationScroll::new);
-    public static final RegistryObject<Item> MIND_CRYSTAL = registerAndPut(LibName.ItemName.MIND_CRYSTAL, ItemDebugAndTestStick::new);
+    public static final RegistryObject<Item> MIND_CRYSTAL = registerAndPut(LibName.ItemName.MIND_CRYSTAL, ItemMindCrystal::new);
     public static final RegistryObject<Item> DEBUG_AND_TEST_STICK = registerAndPut(LibName.ItemName.DEBUG_AND_TEST_STICK, ItemDebugAndTestStick::new);
 
     private static RegistryObject<Item> registerAndPut(String name, Supplier<Item> supplier) {

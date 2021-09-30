@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "saintchapter:block/debug_and_test"
+    }
+  }
+}

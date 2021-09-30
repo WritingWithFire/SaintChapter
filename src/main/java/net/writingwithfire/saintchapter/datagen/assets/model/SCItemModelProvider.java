@@ -20,6 +20,10 @@ public class SCItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         generatedItem(RegistryItems.REVELATION_SCROLL.get());
+        generatedItem(RegistryItems.MIND_CRYSTAL.get());
+        generatedItem(RegistryItems.DEBUG_AND_TEST_STICK.get());
+
+//        withExistingParent(NameUtil.getDefaultName(RegistryItems.DEBUG_AND_TEST_STICK.get()), GENERATED).texture("layer0", new ResourceLocation("minecraft", "item/stick"));
     }
 
     private void generatedItem(Item item) {

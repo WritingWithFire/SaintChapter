@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "saintchapter:item/debug_and_test_stick"
+  }
+}
