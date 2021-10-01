@@ -20,7 +20,7 @@ public class SaintChapter {
     private static ModContainer modContainer;
     private final CommonProxy proxy;
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public SaintChapter() {
         instance = this;

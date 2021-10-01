@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "icon": "saintchapter:mind_crystal",
+  "category": "saintchapter:origin",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ]
+}

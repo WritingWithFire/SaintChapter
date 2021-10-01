@@ -1,0 +1,41 @@
+{
+  "parent": "saintchapter:hear_me_heartbeat",
+  "display": {
+    "icon": {
+      "item": "saintchapter:mind_crystal"
+    },
+    "title": {
+      "translate": "advancement.saintchapter.i_will_tell_you.title"
+    },
+    "description": {
+      "translate": "advancement.saintchapter.i_will_tell_you.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100,
+    "recipes": [
+      "saintchapter:book_of_truth"
+    ]
+  },
+  "criteria": {
+    "i_will_tell_you_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "saintchapter:mind_crystal"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "i_will_tell_you_in_inventory"
+    ]
+  ]
+}

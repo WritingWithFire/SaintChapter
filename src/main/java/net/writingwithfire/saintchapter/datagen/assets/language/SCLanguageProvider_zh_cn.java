@@ -1,6 +1,7 @@
 package net.writingwithfire.saintchapter.datagen.assets.language;
 
 import net.minecraft.data.DataGenerator;
+import net.writingwithfire.saintchapter.common.lib.LibAdvancements;
 import net.writingwithfire.saintchapter.common.lib.LibName;
 import net.writingwithfire.saintchapter.common.lib.LibTranslationText;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryBlocks;
@@ -35,12 +36,21 @@ public class SCLanguageProvider_zh_cn extends net.minecraftforge.common.data.Lan
         add(patchouliBookName + "subtitle", "我一直在寻找");
 
         // 成就
-        String advancementPrefix = "advancement.saintchapter.";
-        add(advancementPrefix + "hear_me_heartbeat.title", "聆听我的心跳");
-        add(advancementPrefix + "hear_me_heartbeat.description", "通过心跳声找到并获取心石");
+        add(advancementTitle(LibAdvancements.HEAR_ME_HEARTBEAT), "聆听我的心跳");
+        add(advancementDescription(LibAdvancements.HEAR_ME_HEARTBEAT), "通过心跳声找到并获取心石");
+        add(advancementTitle(LibAdvancements.I_WILL_TELL_YOU), "我们需要知晓");
+        add(advancementDescription(LibAdvancements.I_WILL_TELL_YOU), "挖掘心石得到意志结晶，它能告诉你这个世界的真实");
 
         // 物品注释
         add(LibTranslationText.TOOL_TIP + LibName.ItemName.REVELATION_SCROLL, "你疏浅的学识无以通晓其真谛");
         add(LibTranslationText.TOOL_TIP + LibName.ItemName.MIND_CRYSTAL, "你依稀听得见其中的呼唤");
+    }
+
+    private static String advancementTitle(String advancement) {
+        return "advancement.saintchapter." + advancement +".title";
+    }
+
+    private static String advancementDescription(String advancement) {
+        return "advancement.saintchapter." + advancement + ".description";
     }
 }

@@ -4,6 +4,8 @@ import hellfirepvp.observerlib.common.util.tick.ITickHandler;
 import net.minecraft.entity.Entity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.writingwithfire.saintchapter.SaintChapter;
 import net.writingwithfire.saintchapter.common.capability.CapabilityAttachHandler;
 import net.writingwithfire.saintchapter.common.capability.CapabilityRegisterHandler;
 import net.writingwithfire.saintchapter.common.data.config.CommonConfig;

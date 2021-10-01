@@ -2,6 +2,6 @@
   "name": "patchouli_books.book_of_truth.name",
   "landing_text": "patchouli_books.book_of_truth.landing_text",
   "version": "0",
-  "creative_tab": "base_tab",
+  "creative_tab": "saintchapter",
   "subtitle": "patchouli_books.book_of_truth.subtitle"
 }
