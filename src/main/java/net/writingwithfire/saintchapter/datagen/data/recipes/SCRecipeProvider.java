@@ -36,7 +36,7 @@ public class SCRecipeProvider extends RecipeProvider {
     public static void registerShapedRecipes(Consumer<IFinishedRecipe> registrar) {
 
          // 帕秋莉的书在数据生成阶段不在注册表中，所以没有采用合成的方法
-        ShapedRecipeBuilder.shapedRecipe(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(SaintChapter.MODID, "debug_and_test"))))
+        ShapedRecipeBuilder.shapedRecipe(ForgeRegistries.ITEMS.getValue(new ResourceLocation("patchouli:guide_book")))
                 .patternLine("MMM")
                 .patternLine("MBM")
                 .patternLine("MMM")
