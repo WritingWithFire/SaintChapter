@@ -5,6 +5,7 @@ import net.writingwithfire.saintchapter.common.block.BlockDebugAndTest;
 import net.writingwithfire.saintchapter.common.block.BlockDreamFire;
 import net.writingwithfire.saintchapter.common.block.BlockImpregnatedStone;
 import net.writingwithfire.saintchapter.common.block.BlockMindStone;
+import net.writingwithfire.saintchapter.common.item.ItemBookOfTruth;
 import net.writingwithfire.saintchapter.common.item.ItemDebugAndTestStick;
 import net.writingwithfire.saintchapter.common.item.ItemMindCrystal;
 import net.writingwithfire.saintchapter.common.item.ItemRevelationScroll;
@@ -17,6 +18,7 @@ public class LibName {
         public static final String REVELATION_SCROLL = NameUtil.getDefaultName(ItemRevelationScroll.class);
         public static final String MIND_CRYSTAL = NameUtil.getDefaultName(ItemMindCrystal.class);
         public static final String DEBUG_AND_TEST_STICK = NameUtil.getDefaultName(ItemDebugAndTestStick.class);
+        public static final String BOOK_OF_TRUTH = NameUtil.getDefaultName(ItemBookOfTruth.class);
     }
 
     public static class BlockName {

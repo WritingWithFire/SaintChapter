@@ -2,15 +2,13 @@ package net.writingwithfire.saintchapter.datagen.data.recipes;
 
 import net.minecraft.advancements.criterion.*;
 import net.minecraft.block.Block;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.data.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ITag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.writingwithfire.saintchapter.SaintChapter;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryItems;
@@ -35,8 +33,10 @@ public class SCRecipeProvider extends RecipeProvider {
 
     public static void registerShapedRecipes(Consumer<IFinishedRecipe> registrar) {
 
-         // 帕秋莉的书在数据生成阶段不在注册表中，所以没有采用合成的方法
-        ShapedRecipeBuilder.shapedRecipe(ForgeRegistries.ITEMS.getValue(new ResourceLocation("patchouli:guide_book")))
+        SaintChapter.LOGGER.info(ForgeRegistries.ITEMS.getEntries().toString());
+
+         // 帕秋莉的书在数据生成阶段不在注册表中..
+        ShapedRecipeBuilder.shapedRecipe(RegistryItems.BOOK_OF_TRUTH.get())
                 .patternLine("MMM")
                 .patternLine("MBM")
                 .patternLine("MMM")
@@ -44,5 +44,6 @@ public class SCRecipeProvider extends RecipeProvider {
                 .key('B', Items.BOOK)
                 .addCriterion("has_item", hasItem(RegistryItems.MIND_CRYSTAL.get()))
                 .build(registrar);
+
     }
 }

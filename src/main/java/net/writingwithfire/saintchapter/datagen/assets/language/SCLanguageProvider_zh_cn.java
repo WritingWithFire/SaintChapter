@@ -19,6 +19,7 @@ public class SCLanguageProvider_zh_cn extends net.minecraftforge.common.data.Lan
         add(RegistryItems.REVELATION_SCROLL.get(), "启示卷轴");
         add(RegistryItems.MIND_CRYSTAL.get(), "远古意志结晶");
         add(RegistryItems.DEBUG_AND_TEST_STICK.get(), "调试棒");
+        add(RegistryItems.BOOK_OF_TRUTH.get(), "真理之书");
 
         // 方块
         add(RegistryBlocks.MIND_STONE.get(), "心石");

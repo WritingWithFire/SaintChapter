@@ -6,6 +6,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.writingwithfire.saintchapter.SaintChapter;
+import net.writingwithfire.saintchapter.common.item.ItemBookOfTruth;
 import net.writingwithfire.saintchapter.common.item.ItemDebugAndTestStick;
 import net.writingwithfire.saintchapter.common.item.ItemMindCrystal;
 import net.writingwithfire.saintchapter.common.item.ItemRevelationScroll;
@@ -24,6 +25,7 @@ public class RegistryItems {
     public static final RegistryObject<Item> REVELATION_SCROLL = registerAndPut(LibName.ItemName.REVELATION_SCROLL, ItemRevelationScroll::new);
     public static final RegistryObject<Item> MIND_CRYSTAL = registerAndPut(LibName.ItemName.MIND_CRYSTAL, ItemMindCrystal::new);
     public static final RegistryObject<Item> DEBUG_AND_TEST_STICK = registerAndPut(LibName.ItemName.DEBUG_AND_TEST_STICK, ItemDebugAndTestStick::new);
+    public static final RegistryObject<Item> BOOK_OF_TRUTH = registerAndPut(LibName.ItemName.BOOK_OF_TRUTH, ItemBookOfTruth::new);
 
     private static RegistryObject<Item> registerAndPut(String name, Supplier<Item> supplier) {
         RegistryObject<Item> registryObject = ITEMS.register(name, supplier);
