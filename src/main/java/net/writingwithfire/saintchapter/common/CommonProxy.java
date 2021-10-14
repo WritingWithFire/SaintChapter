@@ -9,6 +9,7 @@ import net.writingwithfire.saintchapter.common.capability.CapabilityRegisterHand
 import net.writingwithfire.saintchapter.common.data.config.CommonConfig;
 import net.writingwithfire.saintchapter.common.data.config.ServerConfig;
 import net.writingwithfire.saintchapter.common.data.config.entry.WorldGenConfig;
+import net.writingwithfire.saintchapter.common.event.handler.EventHandlerMisc;
 import net.writingwithfire.saintchapter.common.registry.internal.InternalRegistryPrimer;
 import net.writingwithfire.saintchapter.common.registry.internal.PrimerEventHandler;
 import net.writingwithfire.saintchapter.common.registry.internal.RegistryRegistries;
@@ -50,6 +51,8 @@ public class CommonProxy {
     public void attachEventHandlers(IEventBus eventBus) {
         eventBus.addListener(WorldGenHandlers::generateOres);
         eventBus.addGenericListener(Entity.class, CapabilityAttachHandler::capabilityAttachHandler);
+
+        EventHandlerMisc.attachListeners(eventBus);
     }
 
     public InternalRegistryPrimer getRegistryPrimer() {

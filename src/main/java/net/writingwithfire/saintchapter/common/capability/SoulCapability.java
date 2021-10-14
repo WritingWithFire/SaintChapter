@@ -2,9 +2,7 @@ package net.writingwithfire.saintchapter.common.capability;
 
 import net.minecraft.nbt.CompoundNBT;
 
-import javax.annotation.Nullable;
-
-public class SoulCapability implements ISoulCapability{
+public class SoulCapability implements ISoulCapability {
     private int soulStrength;
     private boolean initialized;
 
@@ -19,19 +17,10 @@ public class SoulCapability implements ISoulCapability{
     }
 
     @Override
-    public void setInitialized(boolean isInitialize) {
-        this.initialized = isInitialize;
-    }
-
-    @Override
     public int getSoulStrength() {
         return soulStrength;
     }
 
-    @Override
-    public void setSoulStrength(float soulStrength) {
-        this.soulStrength = (int) soulStrength;
-    }
 
     @Override
     public CompoundNBT serializeNBT() {

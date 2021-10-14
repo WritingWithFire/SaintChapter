@@ -7,22 +7,19 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.writingwithfire.saintchapter.SaintChapter;
+import net.writingwithfire.saintchapter.common.lib.LibCapabilities;
 
 public class CapabilityAttachHandler {
     public CapabilityAttachHandler() {}
 
     public static void capabilityAttachHandler(AttachCapabilitiesEvent<Entity> event) {
-        if (event.getObject() instanceof PlayerEntity){
+        Entity entity = event.getObject();
+        if (entity instanceof PlayerEntity){
             event.addCapability(SaintChapter.key("mind_strength"), new MindCapabilityProvider());
-            SaintChapter.LOGGER.info("Mind Capability attached");
             event.addCapability(SaintChapter.key("soul_strength"), new SoulCapabilityProvider());
-            SaintChapter.LOGGER.info("Player Soul Capability attached");
-            SaintChapter.LOGGER.info("Player Capability attached");
         }
-        if (event.getObject() instanceof MobEntity) {
+        if (entity instanceof MobEntity) {
             event.addCapability(SaintChapter.key("soul_strength"), new SoulCapabilityProvider());
-            SaintChapter.LOGGER.info("Mob Soul Capability attached");
-            SaintChapter.LOGGER.info("Mob Capability attached");
         }
     }
 }

@@ -3,6 +3,7 @@ package net.writingwithfire.saintchapter.common.item;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.StringTextComponent;
@@ -21,23 +22,22 @@ public class ItemDebugAndTestStick extends Item{
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        if (worldIn.isRemote && handIn == Hand.MAIN_HAND) {
+        if (!worldIn.isRemote && handIn == Hand.MAIN_HAND) {
             LazyOptional<IMindCapability> mindCap = playerIn.getCapability(LibCapabilities.MIND_CAPABILITY);
-            LazyOptional<ISoulCapability> soulCap = playerIn.getCapability(LibCapabilities.SOUL_CAPABILITY);
             mindCap.ifPresent((cap) -> {
                 int mindStrength = cap.getMindStrength();
                 playerIn.sendMessage(new StringTextComponent("Mind Strength: " + mindStrength), CommonProxy.IN_GAME_UUID);
             });
+            LazyOptional<ISoulCapability> soulCap = playerIn.getCapability(LibCapabilities.SOUL_CAPABILITY);
             soulCap.ifPresent((cap) -> {
-                boolean isInitialized = cap.getInitialized();
-                int soulStrength = cap.getSoulStrength();
-                if (!isInitialized) {
-                    cap.setSoulStrength(playerIn.getMaxHealth());
-                    cap.setInitialized(true);
-                    playerIn.sendMessage(new StringTextComponent("Soul Strength: " + playerIn.getMaxHealth()), CommonProxy.IN_GAME_UUID);
-                }else {
-                    playerIn.sendMessage(new StringTextComponent("Soul Strength: " + soulStrength), CommonProxy.IN_GAME_UUID);
+                playerIn.sendMessage(new StringTextComponent(String.valueOf(cap.serializeNBT().getBoolean("initialized"))), CommonProxy.IN_GAME_UUID);
+                if (!cap.getInitialized()) {
+                    CompoundNBT nbt = new CompoundNBT();
+                    nbt.putInt("soulStrength", (int) playerIn.getMaxHealth());
+                    nbt.putBoolean("initialized", true);
+                    cap.deserializeNBT(nbt);
                 }
+                playerIn.sendMessage(new StringTextComponent("Soul Strength: " + cap.serializeNBT().getInt("soulStrength") + ", " + cap.getInitialized()), CommonProxy.IN_GAME_UUID);
             });
         }
         return super.onItemRightClick(worldIn, playerIn, handIn);
