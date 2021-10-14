@@ -35,7 +35,7 @@ public class SCRecipeProvider extends RecipeProvider {
 
         SaintChapter.LOGGER.info(ForgeRegistries.ITEMS.getEntries().toString());
 
-         // 帕秋莉的书在数据生成阶段不在注册表中..
+         // 帕秋莉的书不在注册表中..
         ShapedRecipeBuilder.shapedRecipe(RegistryItems.BOOK_OF_TRUTH.get())
                 .patternLine("MMM")
                 .patternLine("MBM")

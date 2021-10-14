@@ -5,6 +5,7 @@ import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.writingwithfire.saintchapter.SaintChapter;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +31,24 @@ public class CapabilityRegisterHandler {
                             },
                             () -> null
                     );
+                    SaintChapter.LOGGER.info("Mind Capability registered");
+                    CapabilityManager.INSTANCE.register(
+                            ISoulCapability.class,
+                            new Capability.IStorage<ISoulCapability>() {
+                                @Nullable
+                                @Override
+                                public INBT writeNBT(Capability<ISoulCapability> capability, ISoulCapability instance, Direction side) {
+                                    return null;
+                                }
+
+                                @Override
+                                public void readNBT(Capability<ISoulCapability> capability, ISoulCapability instance, Direction side, INBT nbt) {
+
+                                }
+                            },
+                            () -> null
+                    );
+                    SaintChapter.LOGGER.info("Soul Capability registered");
                 }
         );
     }

@@ -4,8 +4,6 @@ import hellfirepvp.observerlib.common.util.tick.ITickHandler;
 import net.minecraft.entity.Entity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.writingwithfire.saintchapter.SaintChapter;
 import net.writingwithfire.saintchapter.common.capability.CapabilityAttachHandler;
 import net.writingwithfire.saintchapter.common.capability.CapabilityRegisterHandler;
 import net.writingwithfire.saintchapter.common.data.config.CommonConfig;
@@ -16,9 +14,11 @@ import net.writingwithfire.saintchapter.common.registry.internal.PrimerEventHand
 import net.writingwithfire.saintchapter.common.registry.internal.RegistryRegistries;
 import net.writingwithfire.saintchapter.common.world.WorldGenHandlers;
 
+import java.util.UUID;
 import java.util.function.Consumer;
 
 public class CommonProxy {
+    public static final UUID IN_GAME_UUID = UUID.randomUUID();
 
     private InternalRegistryPrimer registryPrimer;
     private PrimerEventHandler registryEventHandler;
