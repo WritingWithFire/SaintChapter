@@ -15,6 +15,11 @@ public class MindCapability implements IMindCapability{
     }
 
     @Override
+    public void setMindStrength(int mindStrength) {
+        this.mindStrength = mindStrength;
+    }
+
+    @Override
     public CompoundNBT serializeNBT() {
         CompoundNBT compoundNBT = new CompoundNBT();
         compoundNBT.putInt("mindStrength", this.mindStrength);

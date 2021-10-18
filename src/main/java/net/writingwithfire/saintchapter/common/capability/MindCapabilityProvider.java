@@ -23,7 +23,7 @@ public class MindCapabilityProvider implements ICapabilityProvider, INBTSerializ
     @Nonnull
     private IMindCapability getOrCreateCapability() {
         if (mindCapability == null) {
-            this.mindCapability = new MindCapability(0);
+            this.mindCapability = new MindCapability(66);
         }
         return this.mindCapability;
     }

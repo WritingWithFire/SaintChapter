@@ -9,6 +9,7 @@ import net.writingwithfire.saintchapter.common.capability.CapabilityRegisterHand
 import net.writingwithfire.saintchapter.common.data.config.CommonConfig;
 import net.writingwithfire.saintchapter.common.data.config.ServerConfig;
 import net.writingwithfire.saintchapter.common.data.config.entry.WorldGenConfig;
+import net.writingwithfire.saintchapter.common.data.sync.SCPacketHandler;
 import net.writingwithfire.saintchapter.common.event.handler.EventHandlerMisc;
 import net.writingwithfire.saintchapter.common.registry.internal.InternalRegistryPrimer;
 import net.writingwithfire.saintchapter.common.registry.internal.PrimerEventHandler;
@@ -70,5 +71,7 @@ public class CommonProxy {
     // Mod Event
     private void onCommonSetup(FMLCommonSetupEvent event) {
         CapabilityRegisterHandler.capabilityRegisterHandler(event);
+
+        SCPacketHandler.registerMSG();
     }
 }

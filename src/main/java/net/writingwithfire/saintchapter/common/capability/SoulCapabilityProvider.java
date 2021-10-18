@@ -23,7 +23,7 @@ public class SoulCapabilityProvider implements ICapabilityProvider, INBTSerializ
     @Nonnull
     private ISoulCapability getOrCreateCapability() {
         if (soulCapability == null) {
-            this.soulCapability = new SoulCapability(888, false);
+            this.soulCapability = new SoulCapability(88, false);
         }
         return this.soulCapability;
     }

@@ -17,8 +17,18 @@ public class SoulCapability implements ISoulCapability {
     }
 
     @Override
+    public void setInitialized(boolean initialized) {
+        this.initialized = initialized;
+    }
+
+    @Override
     public int getSoulStrength() {
         return soulStrength;
+    }
+
+    @Override
+    public void setSoulStrength(int soulStrength) {
+        this.soulStrength = soulStrength;
     }
 
 
