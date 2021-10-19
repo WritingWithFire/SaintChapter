@@ -1,4 +1,4 @@
-package net.writingwithfire.saintchapter.common.data.sync.msg;
+package net.writingwithfire.saintchapter.common.network.msg;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.ServerPlayerEntity;

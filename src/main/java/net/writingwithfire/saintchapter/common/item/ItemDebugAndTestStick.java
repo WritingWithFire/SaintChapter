@@ -4,7 +4,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.StringTextComponent;
@@ -13,10 +12,8 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fml.network.PacketDistributor;
 import net.writingwithfire.saintchapter.common.CommonProxy;
 import net.writingwithfire.saintchapter.common.capability.IMindCapability;
-import net.writingwithfire.saintchapter.common.capability.ISoulCapability;
-import net.writingwithfire.saintchapter.common.data.sync.SCPacketHandler;
-import net.writingwithfire.saintchapter.common.data.sync.msg.MSGMindCapabilitySync;
-import net.writingwithfire.saintchapter.common.data.sync.msg.MSGSoulCapabilitySync;
+import net.writingwithfire.saintchapter.common.network.SCPacketHandler;
+import net.writingwithfire.saintchapter.common.network.msg.MSGMindCapabilitySync;
 import net.writingwithfire.saintchapter.common.lib.LibCapabilities;
 import net.writingwithfire.saintchapter.common.lib.LibTab;
 
@@ -27,7 +24,7 @@ public class ItemDebugAndTestStick extends Item{
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        if (!worldIn.isRemote && handIn == Hand.MAIN_HAND) {
+        if (!worldIn.isRemote() && handIn == Hand.MAIN_HAND) {
             // 意志能力测试
             LazyOptional<IMindCapability> mindCap = playerIn.getCapability(LibCapabilities.MIND_CAPABILITY);
             mindCap.ifPresent((cap) -> {

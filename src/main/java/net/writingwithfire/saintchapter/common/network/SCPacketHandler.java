@@ -1,11 +1,11 @@
-package net.writingwithfire.saintchapter.common.data.sync;
+package net.writingwithfire.saintchapter.common.network;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import net.writingwithfire.saintchapter.SaintChapter;
-import net.writingwithfire.saintchapter.common.data.sync.msg.MSGMindCapabilitySync;
-import net.writingwithfire.saintchapter.common.data.sync.msg.MSGSoulCapabilitySync;
+import net.writingwithfire.saintchapter.common.network.msg.MSGMindCapabilitySync;
+import net.writingwithfire.saintchapter.common.network.msg.MSGSoulCapabilitySync;
 
 public class SCPacketHandler {
     private static final String PROTOCOL_VERSION = "0.0.1";

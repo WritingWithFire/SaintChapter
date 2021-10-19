@@ -2,13 +2,12 @@ package net.writingwithfire.saintchapter.client.input;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.client.event.InputEvent;
 import net.writingwithfire.saintchapter.client.ClientProxy;
 import net.writingwithfire.saintchapter.client.lib.LibKeyBindings;
-import net.writingwithfire.saintchapter.common.data.sync.SCPacketHandler;
-import net.writingwithfire.saintchapter.common.data.sync.msg.MSGMindCapabilitySync;
+import net.writingwithfire.saintchapter.common.network.SCPacketHandler;
+import net.writingwithfire.saintchapter.common.network.msg.MSGMindCapabilitySync;
 import net.writingwithfire.saintchapter.common.lib.LibCapabilities;
 
 public class KeyBindingEngrave {
