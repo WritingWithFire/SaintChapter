@@ -1,0 +1,79 @@
+{
+  "variants": {
+    "desk_type=none,facing=north": {
+      "model": "saintchapter:block/writing_desk_none",
+      "y": 180
+    },
+    "desk_type=little,facing=north": {
+      "model": "saintchapter:block/writing_desk_little",
+      "y": 180
+    },
+    "desk_type=medium,facing=north": {
+      "model": "saintchapter:block/writing_desk_medium",
+      "y": 180
+    },
+    "desk_type=many,facing=north": {
+      "model": "saintchapter:block/writing_desk_many",
+      "y": 180
+    },
+    "desk_type=full,facing=north": {
+      "model": "saintchapter:block/writing_desk_full",
+      "y": 180
+    },
+    "desk_type=none,facing=south": {
+      "model": "saintchapter:block/writing_desk_none"
+    },
+    "desk_type=little,facing=south": {
+      "model": "saintchapter:block/writing_desk_little"
+    },
+    "desk_type=medium,facing=south": {
+      "model": "saintchapter:block/writing_desk_medium"
+    },
+    "desk_type=many,facing=south": {
+      "model": "saintchapter:block/writing_desk_many"
+    },
+    "desk_type=full,facing=south": {
+      "model": "saintchapter:block/writing_desk_full"
+    },
+    "desk_type=none,facing=west": {
+      "model": "saintchapter:block/writing_desk_none",
+      "y": 90
+    },
+    "desk_type=little,facing=west": {
+      "model": "saintchapter:block/writing_desk_little",
+      "y": 90
+    },
+    "desk_type=medium,facing=west": {
+      "model": "saintchapter:block/writing_desk_medium",
+      "y": 90
+    },
+    "desk_type=many,facing=west": {
+      "model": "saintchapter:block/writing_desk_many",
+      "y": 90
+    },
+    "desk_type=full,facing=west": {
+      "model": "saintchapter:block/writing_desk_full",
+      "y": 90
+    },
+    "desk_type=none,facing=east": {
+      "model": "saintchapter:block/writing_desk_none",
+      "y": 270
+    },
+    "desk_type=little,facing=east": {
+      "model": "saintchapter:block/writing_desk_little",
+      "y": 270
+    },
+    "desk_type=medium,facing=east": {
+      "model": "saintchapter:block/writing_desk_medium",
+      "y": 270
+    },
+    "desk_type=many,facing=east": {
+      "model": "saintchapter:block/writing_desk_many",
+      "y": 270
+    },
+    "desk_type=full,facing=east": {
+      "model": "saintchapter:block/writing_desk_full",
+      "y": 270
+    }
+  }
+}

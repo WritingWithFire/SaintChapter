@@ -19,6 +19,7 @@ public class BlockLootTableProvider extends BlockLootTables {
         this.registerDropSelfLootTable(RegistryBlocks.MIND_STONE.get());
         this.registerDropSelfLootTable(RegistryBlocks.DREAM_FIRE.get());
         this.registerDropSelfLootTable(RegistryBlocks.DEBUG_AND_TEST.get());
+        this.registerDropSelfLootTable(RegistryBlocks.WRITING_DESK.get());
     }
 
     @Nonnull

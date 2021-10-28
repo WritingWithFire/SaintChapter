@@ -33,7 +33,7 @@ public class SCRecipeProvider extends RecipeProvider {
 
     public static void registerShapedRecipes(Consumer<IFinishedRecipe> registrar) {
 
-        SaintChapter.LOGGER.info(ForgeRegistries.ITEMS.getEntries().toString());
+//        SaintChapter.LOGGER.info(ForgeRegistries.ITEMS.getEntries().toString());
 
          // 帕秋莉的书不在注册表中..
         ShapedRecipeBuilder.shapedRecipe(RegistryItems.BOOK_OF_TRUTH.get())

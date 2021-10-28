@@ -26,6 +26,7 @@ public class SCLanguageProvider_zh_cn extends net.minecraftforge.common.data.Lan
         add(RegistryBlocks.IMPREGNATED_STONE.get(), "浸渍石块");
         add(RegistryBlocks.DEBUG_AND_TEST.get(), "调试方块");
         add(RegistryBlocks.DREAM_FIRE.get(), "梦花火");
+        add(RegistryBlocks.WRITING_DESK.get(), "写字桌");
 
         // 组
         add("itemGroup.saintchapter", "圣章");

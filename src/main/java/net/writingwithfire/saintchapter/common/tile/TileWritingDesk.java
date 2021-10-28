@@ -8,4 +8,6 @@ public class TileWritingDesk extends TileEntity {
     public TileWritingDesk() {
         super(RegistryTileEntities.WRITING_DESK.get());
     }
+
+
 }
