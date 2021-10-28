@@ -1,10 +1,7 @@
 package net.writingwithfire.saintchapter.common.lib;
 
 import net.minecraft.block.AbstractBlock;
-import net.writingwithfire.saintchapter.common.block.BlockDebugAndTest;
-import net.writingwithfire.saintchapter.common.block.BlockDreamFire;
-import net.writingwithfire.saintchapter.common.block.BlockImpregnatedStone;
-import net.writingwithfire.saintchapter.common.block.BlockMindStone;
+import net.writingwithfire.saintchapter.common.block.*;
 import net.writingwithfire.saintchapter.common.item.ItemBookOfTruth;
 import net.writingwithfire.saintchapter.common.item.ItemDebugAndTestStick;
 import net.writingwithfire.saintchapter.common.item.ItemMindCrystal;
@@ -26,5 +23,6 @@ public class LibName {
         public static final String MIND_STONE = NameUtil.getDefaultName(BlockMindStone.class);
         public static final String DEBUG_AND_TEST = NameUtil.getDefaultName(BlockDebugAndTest.class);
         public static final String DREAM_FIRE = NameUtil.getDefaultName(BlockDreamFire.class);
+        public static final String WRITING_DESK = NameUtil.getDefaultName(BlockWritingDesk.class);
     }
 }

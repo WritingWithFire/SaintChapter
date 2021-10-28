@@ -2,9 +2,11 @@ package net.writingwithfire.saintchapter.client;
 
 import hellfirepvp.observerlib.common.util.tick.ITickHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.writingwithfire.saintchapter.client.event.OverlayRenderer;
 import net.writingwithfire.saintchapter.client.input.KeyBindingEventHandler;
+import net.writingwithfire.saintchapter.client.registry.RegistryBlockRenderTypes;
 import net.writingwithfire.saintchapter.client.registry.RegistryKeyBindings;
 import net.writingwithfire.saintchapter.common.CommonProxy;
 
@@ -44,7 +46,9 @@ public class ClientProxy extends CommonProxy {
         super.attachTickListeners(registrar);
     }
 
-    private void onClientSetup(FMLCommonSetupEvent event) {
+    private void onClientSetup(FMLClientSetupEvent event) {
         RegistryKeyBindings.init();
+
+        RegistryBlockRenderTypes.registerRenderTypes();
     }
 }

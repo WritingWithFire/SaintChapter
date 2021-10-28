@@ -16,9 +16,9 @@ public class KeyBindingRelease {
         if (playerEntity != null && LibKeyBindings.RELEASE.isPressed()){
             playerEntity.getCapability(LibCapabilities.MIND_CAPABILITY).ifPresent((capability -> {
                 int mindStrength = capability.getMindStrength();
-                playerEntity.sendMessage(new StringTextComponent("Client mind strength: " + mindStrength), ClientProxy.IN_GAME_UUID);
                 capability.setMindStrength(mindStrength - 1);
                 SCPacketHandler.INSTANCE.sendToServer(new MSGMindCapabilitySync(mindStrength - 1));
+                playerEntity.sendMessage(new StringTextComponent("Client mind strength: " + (mindStrength - 1)), ClientProxy.IN_GAME_UUID);
             }));
         }
     }

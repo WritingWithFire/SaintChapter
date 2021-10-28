@@ -1,4 +1,6 @@
 package net.writingwithfire.saintchapter.common.particle;
 
-public class ParticleDataRisingSpot {
+import net.minecraft.particles.IParticleData;
+
+public class ParticleDataRisingSpot implements IParticleData {
 }

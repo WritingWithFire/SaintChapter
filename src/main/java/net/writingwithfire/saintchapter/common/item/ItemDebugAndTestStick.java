@@ -29,9 +29,9 @@ public class ItemDebugAndTestStick extends Item{
             LazyOptional<IMindCapability> mindCap = playerIn.getCapability(LibCapabilities.MIND_CAPABILITY);
             mindCap.ifPresent((cap) -> {
                 int mindStrength = cap.getMindStrength();
-                playerIn.sendMessage(new StringTextComponent("Server Mind Strength: " + (mindStrength + 1)), CommonProxy.IN_GAME_UUID);
                 cap.setMindStrength(mindStrength + 1);
                 SCPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) playerIn), new MSGMindCapabilitySync(mindStrength + 1));
+                playerIn.sendMessage(new StringTextComponent("Server Mind Strength: " + (mindStrength + 1)), CommonProxy.IN_GAME_UUID);
             });
 
 //            // 灵魂能力测试

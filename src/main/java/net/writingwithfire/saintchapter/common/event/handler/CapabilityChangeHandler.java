@@ -29,9 +29,6 @@ public class CapabilityChangeHandler {
                         capability.deserializeNBT(capabilityOld.serializeNBT());
                         event.getPlayer().sendMessage(new StringTextComponent("After: " + capability.getMindStrength()), CommonProxy.IN_GAME_UUID);
                     });
-//                    SCPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()), new MSGMindCapabilitySync(capability.getMindStrength()));
-                    // 为什么要从客户端发送到服务端？
-//                    SCPacketHandler.INSTANCE.sendToServer(new MSGMindCapabilitySync(capability.getMindStrength()));
                 });
             }
             if (oldSoulCap.isPresent() && newSoulCap.isPresent()) {
@@ -39,16 +36,14 @@ public class CapabilityChangeHandler {
                     oldSoulCap.ifPresent(capabilityOld -> {
                         capability.deserializeNBT(capabilityOld.serializeNBT());
                     });
-//                    SCPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> {return (ServerPlayerEntity) event.getPlayer();}), new MSGSoulCapabilitySync(capability.getSoulStrength(), capability.getInitialized()));
-//                    SCPacketHandler.INSTANCE.sendToServer(new MSGSoulCapabilitySync(capability.getSoulStrength(), capability.getInitialized()));
                 });
             }
         }
     }
 
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-        ServerPlayerEntity serverPlayer = (ServerPlayerEntity) event.getPlayer();
         // 进入游戏或重进地图同步能力
+        ServerPlayerEntity serverPlayer = (ServerPlayerEntity) event.getPlayer();
         serverPlayer.getCapability(LibCapabilities.MIND_CAPABILITY).ifPresent(capability -> {
             SCPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> {
                 return serverPlayer;
