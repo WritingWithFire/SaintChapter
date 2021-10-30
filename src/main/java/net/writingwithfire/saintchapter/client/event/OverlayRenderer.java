@@ -21,7 +21,7 @@ public class OverlayRenderer {
         if (event.getType() != RenderGameOverlayEvent.ElementType.ALL) {
             return;
         }
-        if (Minecraft.getInstance().player == null || !Minecraft.getInstance().player.getCapability(LibCapabilities.MIND_CAPABILITY).isPresent()) {
+        if (Minecraft.getInstance().player == null || !Minecraft.getInstance().player.getCapability(LibCapabilities.MIND_CAPABILITY).isPresent() || Minecraft.getInstance().player.isCreative() || Minecraft.getInstance().player.isSpectator()) {
             return;
         }
         MatrixStack matrixStack = event.getMatrixStack();

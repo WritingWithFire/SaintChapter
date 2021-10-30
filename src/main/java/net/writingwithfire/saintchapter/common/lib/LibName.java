@@ -24,5 +24,6 @@ public class LibName {
         public static final String DEBUG_AND_TEST = NameUtil.getDefaultName(BlockDebugAndTest.class);
         public static final String DREAM_FIRE = NameUtil.getDefaultName(BlockDreamFire.class);
         public static final String WRITING_DESK = NameUtil.getDefaultName(BlockWritingDesk.class);
+        public static final String MIND_TANK = NameUtil.getDefaultName(BlockMindTank.class);
     }
 }

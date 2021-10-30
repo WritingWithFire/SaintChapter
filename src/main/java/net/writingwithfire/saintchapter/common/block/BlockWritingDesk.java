@@ -30,6 +30,7 @@ public class BlockWritingDesk extends Block {
     public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<DeskType> DESK_TYPE = EnumProperty.create("desk_type", DeskType.class);
 
+//    //这部分代码为了生成不同书本数目时候的不同碰撞箱
 //    private final VoxelShape shape_none, shape_little, shape_medium, shape_many, shape_full;
     private final VoxelShape shape;
 
@@ -55,7 +56,7 @@ public class BlockWritingDesk extends Block {
         return new TileMindStone();
     }
 
-    public VoxelShape makeShape() {
+    private VoxelShape makeShape() {
         VoxelShape shape = VoxelShapes.empty();
         shape = VoxelShapes.or(shape, VoxelShapes.create(0.1875, 0, 0.1875, 0.8125, 0.0625, 0.8125));
         shape = VoxelShapes.or(shape, VoxelShapes.create(0.3125, 0.0625, 0.3125, 0.6875, 0.625, 0.6875));

@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
+import net.writingwithfire.saintchapter.common.lib.LibTileEntity;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistrySoundEvents;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryTileEntities;
 
@@ -12,7 +13,7 @@ public class TileMindStone extends TileEntity implements ITickableTileEntity {
     private int timer = 0;
 
     public TileMindStone(){
-        super(RegistryTileEntities.MIND_STONE.get());
+        super(LibTileEntity.MIND_STONE);
     }
 
     @Override

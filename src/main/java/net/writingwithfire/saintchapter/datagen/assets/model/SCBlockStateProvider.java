@@ -10,6 +10,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.writingwithfire.saintchapter.SaintChapter;
 import net.writingwithfire.saintchapter.common.block.BlockWritingDesk;
+import net.writingwithfire.saintchapter.common.lib.LibBlocks;
 import net.writingwithfire.saintchapter.common.lib.LibName;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryBlocks;
 
@@ -67,8 +68,9 @@ public class SCBlockStateProvider extends BlockStateProvider {
                 .addModels(new ConfiguredModel(model("writing_desk_full"), 0, 180, false));
         simpleBlockItem(RegistryBlocks.WRITING_DESK.get(), model("writing_desk_little"));
 
-
 //        simpleBlock(RegistryBlocks.DEBUG_AND_TEST.get(), models().cubeAll(LibName.BlockName.DEBUG_AND_TEST, new ResourceLocation("minecraft", "block/stone")));
+        simpleBlock(LibBlocks.MIND_TANK, model(LibName.BlockName.MIND_TANK));
+        simpleBlockItem(LibBlocks.MIND_TANK, model(LibName.BlockName.MIND_TANK));
     }
 
     private void simpleBlockGen(Block block) {
@@ -84,6 +86,7 @@ public class SCBlockStateProvider extends BlockStateProvider {
         return new ModelFile.UncheckedModelFile(prefixPath(name, "block/"));
     }
 
+    // 对于Blockbence创建的模型，其实只需要导出的模型就行了
     private static ModelFile model(String name) {
         return new ModelFile.UncheckedModelFile(new ResourceLocation(SaintChapter.MODID, "block/" + name));
     }

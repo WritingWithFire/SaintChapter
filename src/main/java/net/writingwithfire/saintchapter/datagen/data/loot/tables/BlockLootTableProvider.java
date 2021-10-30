@@ -5,6 +5,7 @@ import net.minecraft.data.loot.BlockLootTables;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.writingwithfire.saintchapter.SaintChapter;
+import net.writingwithfire.saintchapter.common.lib.LibBlocks;
 import net.writingwithfire.saintchapter.common.registry.deferred.gameobjects.RegistryBlocks;
 
 import javax.annotation.Nonnull;
@@ -15,11 +16,12 @@ public class BlockLootTableProvider extends BlockLootTables {
 
     @Override
     protected void addTables() {
-        this.registerDropSelfLootTable(RegistryBlocks.IMPREGNATED_STONE.get());
-        this.registerDropSelfLootTable(RegistryBlocks.MIND_STONE.get());
-        this.registerDropSelfLootTable(RegistryBlocks.DREAM_FIRE.get());
-        this.registerDropSelfLootTable(RegistryBlocks.DEBUG_AND_TEST.get());
-        this.registerDropSelfLootTable(RegistryBlocks.WRITING_DESK.get());
+        this.registerDropSelfLootTable(LibBlocks.IMPREGNATED_STONE);
+        this.registerDropSelfLootTable(LibBlocks.MIND_STONE);
+        this.registerDropSelfLootTable(LibBlocks.DREAM_FIRE);
+        this.registerDropSelfLootTable(LibBlocks.DEBUG_AND_TEST);
+        this.registerDropSelfLootTable(LibBlocks.WRITING_DESK);
+        this.registerDropSelfLootTable(LibBlocks.MIND_TANK);
     }
 
     @Nonnull

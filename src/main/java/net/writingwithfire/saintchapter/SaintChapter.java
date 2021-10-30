@@ -9,6 +9,7 @@ import net.writingwithfire.saintchapter.client.ClientProxy;
 import net.writingwithfire.saintchapter.common.CommonProxy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 @Mod("saintchapter")
 public class SaintChapter {

@@ -21,6 +21,7 @@ public class RegistryBlocks {
     public static final RegistryObject<Block> DREAM_FIRE = registerAndPut(LibName.BlockName.DREAM_FIRE, BlockDreamFire::new);
     public static final RegistryObject<Block> DEBUG_AND_TEST = registerAndPut(LibName.BlockName.DEBUG_AND_TEST, BlockDebugAndTest::new);
     public static final RegistryObject<Block> WRITING_DESK = registerAndPut(LibName.BlockName.WRITING_DESK, BlockWritingDesk::new);
+    public static final RegistryObject<Block> MIND_TANK = registerAndPut(LibName.BlockName.MIND_TANK, BlockMindTank::new);
 
     private static RegistryObject<Block> registerAndPut(String name, Supplier<Block> supplier) {
         RegistryObject<Block> registryObject = BLOCKS.register(name, supplier);

@@ -43,6 +43,7 @@ public class RegistryItems {
         public static final RegistryObject<BlockItem> DEBUG_AND_TEST = registryAndPut(LibName.BlockName.DEBUG_AND_TEST, () -> new BlockItem(RegistryBlocks.DEBUG_AND_TEST.get(), new Item.Properties().group(LibTab.ITEM_GROUP_SC)));
         public static final RegistryObject<BlockItem> DREAM_FIRE = registryAndPut(LibName.BlockName.DREAM_FIRE, () -> new BlockItem(RegistryBlocks.DREAM_FIRE.get(), new Item.Properties().group(LibTab.ITEM_GROUP_SC)));
         public static final RegistryObject<BlockItem> WRITING_DESK = registryAndPut(LibName.BlockName.WRITING_DESK, () -> new BlockItem(RegistryBlocks.WRITING_DESK.get(), new Item.Properties().group(LibTab.ITEM_GROUP_SC)));
+        public static final RegistryObject<BlockItem> MIND_TANK = registryAndPut(LibName.BlockName.MIND_TANK, () -> new BlockItem(RegistryBlocks.MIND_TANK.get(), new Item.Properties().group(LibTab.ITEM_GROUP_SC)));
 
         private static RegistryObject<BlockItem> registryAndPut(String name, Supplier<BlockItem> supplier) {
             RegistryObject<BlockItem> registryObject = ITEMS.register(name, supplier);

@@ -15,6 +15,7 @@ import net.writingwithfire.saintchapter.common.registry.internal.InternalRegistr
 import net.writingwithfire.saintchapter.common.registry.internal.PrimerEventHandler;
 import net.writingwithfire.saintchapter.common.registry.internal.RegistryRegistries;
 import net.writingwithfire.saintchapter.common.world.WorldGenHandlers;
+import software.bernie.geckolib3.GeckoLib;
 
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -29,6 +30,8 @@ public class CommonProxy {
     private ServerConfig serverConfig;
 
     public void initialize() {
+        GeckoLib.initialize();
+
         this.registryPrimer = new InternalRegistryPrimer();
         this.registryEventHandler = new PrimerEventHandler(this.registryPrimer);
 

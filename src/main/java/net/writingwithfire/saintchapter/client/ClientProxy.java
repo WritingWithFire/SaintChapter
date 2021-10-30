@@ -7,6 +7,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.writingwithfire.saintchapter.client.event.OverlayRenderer;
 import net.writingwithfire.saintchapter.client.input.KeyBindingEventHandler;
 import net.writingwithfire.saintchapter.client.registry.RegistryBlockRenderTypes;
+import net.writingwithfire.saintchapter.client.registry.RegistryGeoRender;
 import net.writingwithfire.saintchapter.client.registry.RegistryKeyBindings;
 import net.writingwithfire.saintchapter.common.CommonProxy;
 
@@ -49,6 +50,7 @@ public class ClientProxy extends CommonProxy {
     private void onClientSetup(FMLClientSetupEvent event) {
         RegistryKeyBindings.init();
 
+        RegistryGeoRender.registerGeoRender();
         RegistryBlockRenderTypes.registerRenderTypes();
     }
 }
