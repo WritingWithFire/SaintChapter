@@ -22,6 +22,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.writingwithfire.saintchapter.common.tile.TileMindStone;
+import net.writingwithfire.saintchapter.common.tile.TileWritingDesk;
 
 import javax.annotation.Nullable;
 
@@ -53,7 +54,7 @@ public class BlockWritingDesk extends Block {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new TileMindStone();
+        return new TileWritingDesk();
     }
 
     private VoxelShape makeShape() {

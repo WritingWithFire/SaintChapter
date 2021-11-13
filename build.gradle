@@ -127,8 +127,8 @@ dependencies {
     compileOnly 'hellfirepvp.observerlib:observerlib:1.16.5-1.5.2.v77'
     runtimeOnly 'hellfirepvp.observerlib:observerlib:1.16.5-1.5.2.v77:deobf'
 
-    compileOnly fg.deobf('vazkii.botania:Botania:1.16.5-416:api')
-    runtimeOnly fg.deobf('vazkii.botania:Botania:1.16.5-416')
+//    compileOnly fg.deobf('vazkii.botania:Botania:1.16.5-416:api')
+//    runtimeOnly fg.deobf('vazkii.botania:Botania:1.16.5-416')
 
     compileOnly 'top.theillusivec4.curios:curios-forge:1.16.5-4.0.5.1:api'
     runtimeOnly fg.deobf('top.theillusivec4.curios:curios-forge:1.16.5-4.0.5.1')
@@ -139,7 +139,7 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.45')
 }
 
-// 使用UTF-8编译，但是，感觉没什么用。
+// 使用UTF-8编译，生成json文件时，输出的中文字符会变成utf-8代码，并不能解决此问题
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
