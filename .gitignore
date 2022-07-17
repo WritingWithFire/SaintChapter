@@ -1,32 +1,12 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
+# IntelliJ
+/.idea
 
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
+#gradle stuff
+/.gradle
+/build
 
-# gradle
-build
-.gradle
-# 为了更好的支持不同版本的gradle，把关于本版本的gradle相关文件屏蔽了。
-#/gradle
-#gradle.properties
-#gradlew
-#gradlew.bat
-
-# other
-eclipse
-run
-
-# Files from Forge MDK
-forge*changelog.txt
-
-/src/generated/resources/.cache/
+/run
+/out
+/src/generated
+gradlew
+gradlew.bat

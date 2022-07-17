@@ -1,7 +1,8 @@
 package net.writingwithfire.saintchapter;
 
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.data.loading.DatagenModLoader;
 import net.minecraftforge.fml.*;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -9,23 +10,20 @@ import net.writingwithfire.saintchapter.client.ClientProxy;
 import net.writingwithfire.saintchapter.common.CommonProxy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import software.bernie.geckolib3.GeckoLib;
 
-@Mod("saintchapter")
+@Mod(SaintChapter.MODID)
 public class SaintChapter {
 
     public static final String MODID = "saintchapter";
     public static final String NAME = "Saint Chapter";
 
     private static SaintChapter instance;
-    private static ModContainer modContainer;
     private final CommonProxy proxy;
 
     public static final Logger LOGGER = LogManager.getLogger();
 
     public SaintChapter() {
         instance = this;
-        modContainer = ModList.get().getModContainerById(MODID).get();
 
         this.proxy = DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
         this.proxy.initialize();
@@ -37,16 +35,8 @@ public class SaintChapter {
         return instance;
     }
 
-    public static ModContainer getModContainer() {
-        return modContainer;
-    }
-
     public static CommonProxy getProxy() {
         return getInstance().proxy;
-    }
-
-    public static ResourceLocation key(String path) {
-        return new ResourceLocation(SaintChapter.MODID, path);
     }
 
     public static boolean isDoingDataGeneration() {
